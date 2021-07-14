@@ -15,10 +15,13 @@ class CreateMatchDetailsTable extends Migration
     {
         Schema::create('match_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('number_of_empty_seats');
-            $table->integer('number_of_seats_purchased');
+            $table->integer('A_number_of_empty_seats');
+            $table->integer('A_number_of_seats_purchased');
+            $table->float('A_price');
+            $table->integer('B_number_of_empty_seats');
+            $table->integer('B_number_of_seats_purchased');
+            $table->float('B_price');
             $table->integer('id_match');
-            $table->float('price');
             $table->timestamps();
         });
     }
