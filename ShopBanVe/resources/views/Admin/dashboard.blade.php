@@ -13,8 +13,10 @@
                                 <div class="card-icon">
                                     <i class="material-icons">content_copy</i>
                                 </div>
-                                <p class="card-category">Used Space</p>
-                                <h3 class="card-title">49/50
+                                <p class="card-category">Tất cả số trận đấu</p>
+                                 <h3 class="card-title">
+                                    <p>{{$totalView}}</p>
+                                    <p>{{$SLVDB}}</p>
                                     <small>GB</small>
                                 </h3>
                             </div>
