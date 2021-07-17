@@ -60,6 +60,7 @@ Route::get('admin/vmatches/delete/{id}', [VMatchController::class, 'delete'])->n
 
 //MatchDetail
 Route::get('admin/matchdetails', [MatchDetailController::class, 'index'])->name('index.matchdetail');
+Route::get('admin/matchdetails/getByIdMatch/{id}', [MatchDetailController::class, 'getByIdMatch'])->name('getByIdMatch.matchdetail');
 Route::get('admin/matchdetails/create', [MatchDetailController::class, 'create'])->name('matchdetail.create');
 Route::post('admin/matchdetails/create', [MatchDetailController::class, 'store'])->name('store.matchdetail');
 Route::get('admin/matchdetails/edit/{id}', [MatchDetailController::class, 'edit'])->name('matchdetail.edit');

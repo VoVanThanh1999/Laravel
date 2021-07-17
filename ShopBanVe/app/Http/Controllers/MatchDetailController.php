@@ -68,4 +68,9 @@ class MatchDetailController extends Controller
         $order = DB::table('v_matches')->where('id', $id)->get();
         return $order;
     }
+
+    public function getByIdMatch($id){
+        $match_details = DB::table('match_details')->where('id_match', $id)->get();
+        return view('MatchDetail.index', compact('match_details'));
+    }
 }

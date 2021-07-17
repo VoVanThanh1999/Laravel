@@ -13,12 +13,9 @@
                                 <h4 class="card-title">Create Match</h4>
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="{{ route('store.vmatch') }}">
+                                <form method="POST" action="{{ route('store.vmatch') }}"  enctype="multipart/form-data">
                                     @csrf
-                                    <div class="form-group">
-                                        <label for="">Id</label>
-                                        <input type="text" class="form-control" name="id" id="" placeholder="">
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label for="">Name</label>
                                         <input type="text" class="form-control" name="name" id="" placeholder="">
@@ -27,14 +24,11 @@
                                         <label for="">Date_start</label>
                                         <input type="text" class="form-control" name="date_start" id="datepicker" placeholder="">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="">Image</label>
-                                        {{-- <input type="file" class="form-control" name="image" id="image" placeholder=""> --}}
-                                    </div>
-                                    <input type="file" class="form-control" name="image" id="image" placeholder="">
+                                    <label for="">Image</label>
+                                        <input type="file" class="form-control" name="image" id="image"  >
                                     <div class="form-group">
                                         <label for="">Information</label>
-                                        <input type="text" class="form-control" name="information" id="" placeholder="">
+                                        <textarea type="text"  name="information" id="information" placeholder=""></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </form>
@@ -52,6 +46,11 @@
                 autoclose: true,
                 todayHighlight: true
             });
+            CKEDITOR.replace( 'information' );
         </script>
     </div>
 @endsection
+
+
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+ 
