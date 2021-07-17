@@ -33,7 +33,7 @@
                                                     <td>{{ $v_match->id }}</td>
                                                     <td>{{ $v_match->name }}</td>
                                                     <td>{{ $v_match->date_start }}</td>
-                                                    <td>{{ $v_match->image }}</td>
+                                                    <td><img width="85px" height="85px" src={{ URL::to('/') }}/upload/images/{{ $v_match->image }}></td>
                                                     <td>{{ $v_match->information }}</td>
                                                     <td>
                                                         <a href="/admin/vmatches/edit/{{ $v_match->id }}">

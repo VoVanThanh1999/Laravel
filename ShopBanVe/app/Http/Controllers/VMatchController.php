@@ -22,11 +22,15 @@ class VMatchController extends Controller
 
     public function store(Request $request)
     {
+
+        $file_name = $request->file('image')->getClientOriginalName();
+        $request->file('image')->move('upload/images',  $file_name );
+
         DB::table('v_matches')->insert([
             'id' => $request->id,
             'name' => $request->name,
             'date_start' => $request->date_start,
-            'image' => $request->image,
+            'image' => $file_name ,
             'information' => $request->information,
         ]);
 
@@ -40,14 +44,28 @@ class VMatchController extends Controller
     }
 
     public function update(Request $request)
-    {
-        DB::table('v_matches')->where('id', $request->id)->update([
-            'id' => $request->id,
-            'name' => $request->name,
-            'date_start' => $request->date_start,
-            'image' => $request->image,
-            'information' => $request->information,
-        ]);
+    {   
+        if ($request->file('image') == null){
+            DB::table('v_matches')->where('id', $request->id)->update([
+                'id' => $request->id,
+                'name' => $request->name,
+                'date_start' => $request->date_start,
+                'image' => '',
+                'information' => $request->information,
+            ]);
+        }else{
+            $file_name = $request->file('image')->getClientOriginalName();
+            $request->file('image')->move('upload/images',  $file_name );
+            DB::table('v_matches')->where('id', $request->id)->update([
+                'id' => $request->id,
+                'name' => $request->name,
+                'date_start' => $request->date_start,
+                'image' => $file_name ,
+                'information' => $request->information,
+            ]);
+        }
+        
+     
 
         return redirect('/admin/vmatches');
     }
