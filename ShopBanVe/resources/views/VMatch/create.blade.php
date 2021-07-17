@@ -29,8 +29,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Image</label>
-                                        <input type="text" class="form-control" name="image" id="image" placeholder="">
+                                        {{-- <input type="file" class="form-control" name="image" id="image" placeholder=""> --}}
                                     </div>
+                                    <input type="file" class="form-control" name="image" id="image" placeholder="">
                                     <div class="form-group">
                                         <label for="">Information</label>
                                         <input type="text" class="form-control" name="information" id="" placeholder="">

@@ -18,14 +18,13 @@
                             <div class="card-body">
                                 <a class="btn btn-success" href="{{ route('order.create') }}">CREATE USER</a>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="text-primary">
+                                    <table class="table table-striped table-bordered">
+                                        <thead class="thead-light text-primary">
                                             <th>I</th>
                                             <th>Status</th>
                                             <th>Fullname</th>
                                             <th>Address1</th>
-                                            <th>Address1</th>
-                                            <th>Id_card</th>
+                                            <th>Address2</th>
                                             <th>Phone</th>
                                             <th>Email</th>
                                             <th>Option</th>
@@ -44,7 +43,6 @@
                                                     <td>{{ $order->full_name }}</td>
                                                     <td>{{ $order->address1 }}</td>
                                                     <td>{{ $order->address2 }}</td>
-                                                    <td>{{ $order->id_card }}</td>
                                                     <td>{{ $order->phone }}</td>
                                                     <td>{{ $order->email }}</td>
                                                     <td>

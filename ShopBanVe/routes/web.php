@@ -76,3 +76,4 @@ Route::post('register/create', [AdminController::class, 'registerCreate'])->name
 
 // HomePage
 Route::get('homepage', [HomeController::class, 'homepage']);
+ 

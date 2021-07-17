@@ -15,7 +15,7 @@
                                 </div>
                                 <p class="card-category">Tất cả trận đấu</p>
                                  <h3 class="card-title">
-                                    <p>{{$a[2]}}</p>
+                                    <p>{{$a[0]}}</p>
                                 </h3>
                             </div>
                             <div class="card-footer">
@@ -73,9 +73,7 @@
                                 <p class="card-category">SL admin</p>
                                 <h3 class="card-title">
                                     <p>{{$a[3]}}</p>
-
                                 </h3>
-                              
                             </div>
                             <div class="card-footer">
                                 <div class="stats">

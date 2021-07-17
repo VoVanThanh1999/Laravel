@@ -19,8 +19,8 @@
                             <div class="card-body">
                                 <a class="btn btn-success" href="{{ route('orderdetail.create') }}">CREATE ORDERDETAIL</a>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="text-primary">
+                                    <table class="table table-striped table-bordered">
+                                        <thead class="thead-light text-primary">
                                             <th>I</th>
                                             <th>Status</th>
                                             <th>Id_order</th>

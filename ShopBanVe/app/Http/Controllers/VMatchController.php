@@ -22,6 +22,8 @@ class VMatchController extends Controller
 
     public function store(Request $request)
     {
+        
+
         DB::table('v_matches')->insert([
             'id' => $request->id,
             'name' => $request->name,

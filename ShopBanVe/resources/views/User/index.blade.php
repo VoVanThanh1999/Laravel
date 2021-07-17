@@ -18,8 +18,8 @@
                         <div class="card-body">
                             <a class="btn btn-success" href="{{ route('user.create') }}">CREATE ADMIN</a>
                             <div class="table-responsive">
-                                <table class="table">
-                                    <thead class="text-primary">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="thead-light">
                                         {{-- <th>ID</th> --}}
                                         <th>Name</th>
                                         <th>Email</th>
