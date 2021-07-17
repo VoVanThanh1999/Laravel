@@ -7,6 +7,8 @@ use App\Models\User;
 use DB;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -27,7 +29,7 @@ class UserController extends Controller
             'id' => $request->id,
             'name'=> $request->name,
             'email'=> $request->email,
-            'password'=>$request->password,
+            'password' => Hash::make($request->password),
             'phone'=>$request->phone,
             'avatar'=>$request->avatar
              

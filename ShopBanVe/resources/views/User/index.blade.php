@@ -10,17 +10,17 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title">Simple Table</h4>
+                            <h4 class="card-title">Admin</h4>
                             <p class="card-category">
-                                Here is a subtitle for this table
+                                Danh sách Admin
                             </p>
                         </div>
                         <div class="card-body">
-                            <a class="btn btn-success" href="{{ route('user.create') }}">CREATE USER</a>
+                            <a class="btn btn-success" href="{{ route('user.create') }}">CREATE ADMIN</a>
                             <div class="table-responsive">
-                                <table class="table">
-                                    <thead class="text-primary">
-                                        <th>ID</th>
+                                <table class="table table-striped table-bordered">
+                                    <thead class="thead-light">
+                                        {{-- <th>ID</th> --}}
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Password</th>
@@ -30,7 +30,7 @@
                                     <tbody>
                                         @foreach ($users as $user)
                                         <tr>
-                                            <td>{{ $user->id }}</td>
+                                            {{-- <td>{{ $user->id }}</td> --}}
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->password }}</td>

@@ -16,10 +16,10 @@
                                 </p>
                             </div>
                             <div class="card-body">
-                                <a class="btn btn-success" href="{{ route('vmatch.create') }}">CREATE MATCH DETAIL</a>
+                                <a class="btn btn-success" href="{{ route('vmatch.create') }}">CREATE MATCH</a>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="text-primary">
+                                    <table class="table table-striped table-bordered">
+                                        <thead class="thead-light text-primary">
                                             <th>Id</th>
                                             <th>Name</th>
                                             <th>DateStart</th>

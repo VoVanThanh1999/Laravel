@@ -1,53 +1,197 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <title>Bootstrap 4 Login/Register Form</title>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/img/favicon.png') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Login
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="{{ asset('css/material-kit.css?v=2.0.7') }}" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="{{ asset('demo/demo.css') }}" rel="stylesheet" />
 </head>
-<body>
-    <div id="logreg-forms">
-        <form action="{{ route('login.check') }}" class="form-signin" method="POST">
 
-            @if(Session::get('fail'))
-                <div class="alert alert-danger">
-                    {{ Session::get('fail') }}
+<body class="login-page sidebar-collapse">
+    <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
+        id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
+                    Material Kit </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="material-icons">apps</i> Components
+                        </a>
+                        <div class="dropdown-menu dropdown-with-icons">
+                            <a href="../index.html" class="dropdown-item">
+                                <i class="material-icons">layers</i> All Components
+                            </a>
+                            <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html"
+                                class="dropdown-item">
+                                <i class="material-icons">content_paste</i> Documentation
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.creative-tim.com/product/material-kit-pro"
+                            target="_blank">
+                            <i class="material-icons">unarchive</i> Upgrade to PRO
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                            href="https://twitter.com/CreativeTim" target="_blank"
+                            data-original-title="Follow us on Twitter" rel="nofollow">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                            href="https://www.facebook.com/CreativeTim" target="_blank"
+                            data-original-title="Like us on Facebook" rel="nofollow">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                            href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
+                            data-original-title="Follow us on Instagram" rel="nofollow">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page-header header-filter"
+        style="background-image: url('{{ asset('img/bg7.jpg') }}'); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                    <div class="card card-login">
+                        <form class="form" method="POST" action="{{ route('login.check') }}">
+                            <div class="card-header card-header-primary text-center">
+                                <h4 class="card-title">Login</h4>
+                                <div class="social-line">
+                                    <a href="#pablo" class="btn btn-just-icon btn-link">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-link">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-link">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="description text-center">Or Be Classical</p>
+                            @if (Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail') }}
+                                </div>
+                            @endif
+
+                            @csrf
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">mail</i>
+                                        </span>
+                                    </div>
+                                    <input type="email" id="inputEmail" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email..."> \
+                                </div>
+                                <span class="text-danger">@error('email') {{ $message }} @enderror</span>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                    </div>
+                                    <input type="password" id="inputPassword" name="password" value="{{ old('password') }}" class="form-control" placeholder="Password...">
+                                </div>
+                                <span class="text-danger">@error('password') {{ $message }} @enderror</span>
+                            </div>
+                            <br>   
+                            <br> 
+                            <button class="btn btn-primary btn-link btn-wd btn-lg btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign In</button> 
+
+                            {{-- <div class="footer text-center">
+                                <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Get Started</a>
+                            </div> --}}
+                        </form>
+                    </div>
                 </div>
-            @endif
-
-            @csrf
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
-            <div class="social-login">
-                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
-                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
             </div>
-            <p style="text-align:center"> OR  </p>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" id="inputEmail" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email address">
-                <span class="text-danger">@error('email') {{ $message }} @enderror</span>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <nav class="float-left">
+                    <ul>
+                        <li>
+                            <a href="https://www.creative-tim.com/">
+                                Creative Tim
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.creative-tim.com/presentation">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.creative-tim.com/blog">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.creative-tim.com/license">
+                                Licenses
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright float-right">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>, made with <i class="material-icons">favorite</i> by
+                    <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
+                </div>
             </div>
-            <div class="form-group">
-                <label>Password:</label>
-                <input type="password" id="inputPassword" name="password" value="{{ old('password') }}" class="form-control" placeholder="Password">
-                <span class="text-danger">@error('password') {{ $message }} @enderror</span>
-            </div>
-            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign In</button> 
-            <hr>
-            <!-- <p>Don't have an account!</p>  -->
-            <a href="{{ route('register') }}" >Sign up New Account</a>
+        </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="/script.js"></script>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+    <!--  Google Maps Plugin    -->
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/material-kit.js?v=2.0.7" type="text/javascript"></script>
 </body>
+
 </html>

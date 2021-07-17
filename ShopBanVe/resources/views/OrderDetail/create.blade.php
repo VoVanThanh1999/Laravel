@@ -36,6 +36,10 @@
                                         <input type="text" class="form-control" name="quantity" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
+                                        <label for="">Type_chair</label>
+                                        <input type="text" class="form-control" name="type_chair" id="" placeholder="">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="">Price</label>
                                         <input type="text" class="form-control" name="price" id="" placeholder="">
                                     </div>

@@ -10,15 +10,11 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Edit user</h4>
+                                <h4 class="card-title">Edit Admin</h4>
                             </div>
                             <div class="card-body">
                                 <form method="POST" action="{{ route('store.user') }}">
                                     @csrf
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Id</label>
-                                      <input type="text" class="form-control" name="id">
-                                    </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Name</label>
                                         <input type="text" class="form-control" name="name" >

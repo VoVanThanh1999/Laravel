@@ -18,15 +18,15 @@
                             <div class="card-body">
                                 <a class="btn btn-success" href="{{ route('matchdetail.create') }}">CREATE MATCH DETAIL</a>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="text-primary">
+                                    <table class="table table-striped table-bordered">
+                                        <thead class="thead-light">
                                             <th>Id</th>
-                                            <th>A_seats</th>
-                                            <th>A_purchased</th>
-                                            <th>A_price</th>
-                                            <th>B_seats</th>
-                                            <th>B_purchased</th>
-                                            <th>B_price</th>
+                                            <th>Số lượng ghế A trống</th>
+                                            <th>Số lượng ghế A đã mua</th>
+                                            <th>Giá ghế A</th>
+                                            <th>Số lượng ghế B trống</th>
+                                            <th>Số lượng ghế B đã mua</th>
+                                            <th>Giá ghế B</th>
                                             <th>Id_match</th>
                                             <th>Option</th>
                                         </thead>
@@ -34,13 +34,13 @@
                                             @foreach ($match_details as $match_detail)
                                                 <tr>
                                                     <td>{{ $match_detail->id }}</td>
-                                                    <td>{{ $match_detail->A_number_of_empty_seats }}</td>
-                                                    <td>{{ $match_detail->A_number_of_seats_purchased }}</td>
-                                                    <td>{{ $match_detail->A_price }}</td>
-                                                    <td>{{ $match_detail->B_number_of_empty_seats }}</td>
-                                                    <td>{{ $match_detail->B_number_of_seats_purchased }}</td>
-                                                    <td>{{ $match_detail->B_price }}</td>
-                                                    <td>{{ $match_detail->id_match }}</td>
+                                                    <td>{{ number_format($match_detail->A_number_of_empty_seats) }} ghế</td>
+                                                    <td>{{ number_format($match_detail->A_number_of_seats_purchased) }} ghế</td>
+                                                    <td>{{ number_format($match_detail->A_price)}} vnđ</td>
+                                                    <td>{{ number_format($match_detail->B_number_of_empty_seats)}} ghế</td>
+                                                    <td>{{ number_format($match_detail->B_number_of_seats_purchased)}} ghế</td>
+                                                    <td>{{ number_format($match_detail->B_price)}} vnđ</td>
+                                                    <td><?php echo \App\Http\Controllers\MatchDetailController::findMatchById( $match_detail->id_match)[0]->name?></td>                                        
                                                     <td>
                                                         <a href="/admin/matchdetails/edit/{{ $match_detail->id }}">
                                                             <button class="btn btn-danger">Edit</button>

@@ -1,3 +1,4 @@
+
 @extends('Layout.layout')
 @section('orderdetail')
     <div class="main-panel">
@@ -18,25 +19,36 @@
                             <div class="card-body">
                                 <a class="btn btn-success" href="{{ route('orderdetail.create') }}">CREATE ORDERDETAIL</a>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="text-primary">
+                                    <table class="table table-striped table-bordered">
+                                        <thead class="thead-light text-primary">
                                             <th>I</th>
                                             <th>Status</th>
                                             <th>Id_order</th>
                                             <th>Id_match</th>
                                             <th>Quantity</th>
+                                            <th>Type_chair</th>
                                             <th>Price</th>
+                                            <th>Created_at</th>
+                                            <th>Updated_at</th>
                                             <th>Option</th>
                                         </thead>
                                         <tbody>
                                             @foreach ($order_details as $order_detail)
                                                 <tr>
                                                     <td>{{ $order_detail->id }}</td>
-                                                    <td>{{ $order_detail->status }}</td>
-                                                    <td>{{ $order_detail->id_order }}</td>
-                                                    <td>{{ $order_detail->id_match }}</td>
+                                                
+                                                    @if($order_detail->status  =='0')         
+                                                        <td>Đang chờ xác nhận</td>         
+                                                    @else
+                                                        <td>Đã xác nhận</td>   
+                                                    @endif
+                                                    <td><?php echo \App\Http\Controllers\OrderDetailController::findOrderById( $order_detail->id_order)[0]->full_name?></td>
+                                                    <td><?php echo \App\Http\Controllers\OrderDetailController::findMatchById( $order_detail->id_match)[0]->name?></td>                                        
                                                     <td>{{ $order_detail->quantity }}</td>
+                                                    <td>{{ $order_detail->type_chair }}</td>
                                                     <td>{{ $order_detail->price }}</td>
+                                                    <td>{{ $order_detail->created_at }}</td>
+                                                    <td>{{ $order_detail->updated_at }}</td>
                                                     <td>
                                                         <a href="/admin/orderdetails/edit/{{ $order_detail->id }}">
                                                             <button class="btn btn-danger">Edit</button>
