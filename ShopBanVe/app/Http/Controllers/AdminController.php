@@ -27,12 +27,14 @@ class AdminController extends Controller
         $totalNumberTicketSold = DB::table('orders')
         ->count();
 
-        $userss = DB::table('users')
+        $users = DB::table('users')
         ->count();
+
+        $a=array($getAllMatches, $getMatchThanCurrentDate, $totalNumberTicketSold, $users);
  
         // print_r($getMatchThanCurrentDate);
 
-        return view('Admin.dashboard', ['totalView'=> $getAllMatches], ['SLVDB'=> $totalNumberTicketSold]);
+        return view('Admin.dashboard', compact("a"));
     }
 
     public function login()

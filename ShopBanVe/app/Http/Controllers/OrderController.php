@@ -23,8 +23,8 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         DB::table('orders')->insert([
-            'id' => $request->id,
-            'status' => $request->status,
+             
+            'status' => 0,
             'full_name' => $request->full_name,
             'address1' => $request->address1,
             'address2' => $request->address2,

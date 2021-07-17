@@ -19,6 +19,7 @@ class CreateOrderDetailsTable extends Migration
             $table->integer('id_order');
             $table->integer('id_match');
             $table->integer('quantity');
+            $table->integer('type_chair');
             $table->float('price');
             $table->timestamps();
         });

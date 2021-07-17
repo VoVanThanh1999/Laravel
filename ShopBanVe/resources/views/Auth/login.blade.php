@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <title>Bootstrap 4 Login/Register Form</title>
+    <title>Login</title>
 </head>
 <body>
     <div id="logreg-forms">
@@ -26,11 +26,12 @@
 
             @csrf
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
-            <div class="social-login">
+            {{-- <div class="social-login">
                 <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
                 <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
             </div>
-            <p style="text-align:center"> OR  </p>
+            <p style="text-align:center"> OR  </p> --}}
+            <hr>
             <div class="form-group">
                 <label>Email:</label>
                 <input type="email" id="inputEmail" name="email" value="{{ old('email') }}" class="form-control" placeholder="Email address">
@@ -42,9 +43,8 @@
                 <span class="text-danger">@error('password') {{ $message }} @enderror</span>
             </div>
             <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign In</button> 
-            <hr>
             <!-- <p>Don't have an account!</p>  -->
-            <a href="{{ route('register') }}" >Sign up New Account</a>
+            {{-- <a href="{{ route('register') }}" >Sign up New Account</a> --}}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

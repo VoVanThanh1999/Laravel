@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\VMatchController;
 use App\Http\Controllers\MatchDetailController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,3 +73,6 @@ Route::get('login', [AdminController::class, 'login'])->name('login');
 Route::post('login/check', [AdminController::class, 'loginCheck'])->name('login.check');
 Route::get('register', [AdminController::class, 'register'])->name('register');
 Route::post('register/create', [AdminController::class, 'registerCreate'])->name('register.create');
+
+// HomePage
+Route::get('homepage', [HomeController::class, 'homepage']);

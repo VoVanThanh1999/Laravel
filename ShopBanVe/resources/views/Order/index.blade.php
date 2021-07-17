@@ -33,8 +33,14 @@
                                         <tbody>
                                             @foreach ($orders as $order)
                                                 <tr>
+                                                    
+
                                                     <td>{{ $order->id }}</td>
-                                                    <td>{{ $order->status }}</td>
+                                                    @if($order->status  =='0')         
+                                                        <td>Đang chờ xác nhận</td>         
+                                                    @else
+                                                    <td>Đã xác nhận</td>        
+                                                    @endif
                                                     <td>{{ $order->full_name }}</td>
                                                     <td>{{ $order->address1 }}</td>
                                                     <td>{{ $order->address2 }}</td>

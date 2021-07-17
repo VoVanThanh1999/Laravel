@@ -17,13 +17,18 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="">Id</label>
-                                        <input type="text" class="form-control" name="id" value="{{ $order->id }}" id=""
+                                        <input type="text" disable class="form-control" name="id" value="{{ $order->id }}" id=""
                                             placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Status</label>
-                                        <input type="text" class="form-control" name="status" value="{{ $order->status }}"
-                                            id="" placeholder="">
+                                        @if($order->status == 1)         
+                                            <input type="checkbox" value="0"  name="status"{{ $order->status == 1 ? ' checked="checked"' : '' }}>         
+                                        @else
+                                            <input type="checkbox" value="1"  name="status"{{ $order->status == 1 ? ' checked="checked"' : '' }}> 
+                                        @endif
+                                        
+                                         
                                     </div>
                                     <div class="form-group">
                                         <label for="">Fullname</label>

@@ -15,14 +15,8 @@
                             <div class="card-body">
                                 <form method="POST" action="{{ route('store.order') }}">
                                     @csrf
-                                    <div class="form-group">
-                                        <label for="">Id</label>
-                                        <input type="text" class="form-control" name="id" id="" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Status</label>
-                                        <input type="text" class="form-control" name="status" id="" placeholder="">
-                                    </div>
+                                  
+                                   
                                     <div class="form-group">
                                         <label for="">Fullname</label>
                                         <input type="text" class="form-control" name="full_name" id="" placeholder="">
