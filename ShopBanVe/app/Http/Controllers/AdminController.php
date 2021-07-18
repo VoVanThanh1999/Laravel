@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\Models\User;
+use App\Models\VMatch;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,9 +15,26 @@ class AdminController extends Controller
         return view('Admin.dashboard');
     }
 
-    public function dashboard()
-    {
-        return view('Admin.dashboard');
+    public function dashboard(){
+        
+      
+        $getAllMatches = DB::table('v_matches')
+        ->count();
+
+        $getMatchThanCurrentDate = DB::table('v_matches')
+        ->where('date_start','>',' CURRENT_DATE')->get();
+
+        $totalNumberTicketSold = DB::table('orders')
+        ->count();
+
+        $users = DB::table('users')
+        ->count();
+
+        $a=array($getAllMatches, $getMatchThanCurrentDate, $totalNumberTicketSold, $users);
+ 
+        // print_r($getMatchThanCurrentDate);
+
+        return view('Admin.dashboard', compact("a"));
     }
 
     public function login()
@@ -71,6 +90,10 @@ class AdminController extends Controller
         }else{
             return back()->with('fail', 'Something went wrong, try again later');
         }
+    }
+
+    public function getAllMatch(){
+        return view('Dashboard.dashboard', compact('getAllMatches'));
     }
 }
 

@@ -16,15 +16,15 @@
                                 </p>
                             </div>
                             <div class="card-body">
-                                <a class="btn btn-success" href="{{ route('vmatch.create') }}">CREATE MATCH DETAIL</a>
+                                <a class="btn btn-success" href="{{ route('vmatch.create') }}">CREATE MATCH</a>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead class="text-primary">
+                                    <table class="table table-striped table-bordered">
+                                        <thead class="thead-light text-primary">
                                             <th>Id</th>
                                             <th>Name</th>
                                             <th>DateStart</th>
                                             <th>Image</th>
-                                            <th>Imformation</th>
+                                            {{-- <th>Imformation</th> --}}
                                             <th>Option</th>
                                         </thead>
                                         <tbody>
@@ -34,13 +34,16 @@
                                                     <td>{{ $v_match->name }}</td>
                                                     <td>{{ $v_match->date_start }}</td>
                                                     <td><img width="85px" height="85px" src={{ URL::to('/') }}/upload/images/{{ $v_match->image }}></td>
-                                                    <td>{{ $v_match->information }}</td>
+                                                    {{-- <td>{{ $v_match->information }}</td> --}}
                                                     <td>
                                                         <a href="/admin/vmatches/edit/{{ $v_match->id }}">
                                                             <button class="btn btn-danger">Edit</button>
                                                         </a>
                                                         <a href="/admin/vmatches/delete/{{ $v_match->id }}">
                                                             <button class="btn btn-warning">Delete</button>
+                                                        </a>
+                                                        <a href="./matchdetails/getByIdMatch/{{ $v_match->id }}">
+                                                            <button class="btn btn-primary">See details</button>
                                                         </a>
                                                     </td>
                                                 </tr>

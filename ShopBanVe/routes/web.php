@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\VMatchController;
 use App\Http\Controllers\MatchDetailController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +60,7 @@ Route::get('admin/vmatches/delete/{id}', [VMatchController::class, 'delete'])->n
 
 //MatchDetail
 Route::get('admin/matchdetails', [MatchDetailController::class, 'index'])->name('index.matchdetail');
+Route::get('admin/matchdetails/getByIdMatch/{id}', [MatchDetailController::class, 'getByIdMatch'])->name('getByIdMatch.matchdetail');
 Route::get('admin/matchdetails/create', [MatchDetailController::class, 'create'])->name('matchdetail.create');
 Route::post('admin/matchdetails/create', [MatchDetailController::class, 'store'])->name('store.matchdetail');
 Route::get('admin/matchdetails/edit/{id}', [MatchDetailController::class, 'edit'])->name('matchdetail.edit');
@@ -72,3 +74,7 @@ Route::get('login', [AdminController::class, 'login'])->name('login');
 Route::post('login/check', [AdminController::class, 'loginCheck'])->name('login.check');
 Route::get('register', [AdminController::class, 'register'])->name('register');
 Route::post('register/create', [AdminController::class, 'registerCreate'])->name('register.create');
+
+// HomePage
+Route::get('homepage', [HomeController::class, 'homepage']);
+ 

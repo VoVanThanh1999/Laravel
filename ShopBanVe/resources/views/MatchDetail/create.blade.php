@@ -17,32 +17,32 @@
                             <div class="card-body">
                                 <form method="POST" action="{{ route('store.matchdetail') }}">
                                     @csrf
-                                    <div class="form-group">
+                                    {{-- <div class="form-group">
                                         <label for="">Id</label>
                                         <input type="text" class="form-control" name="id" id="" placeholder="">
-                                    </div>
+                                    </div> --}}
                                     <div class="form-group">
-                                        <label for="">A_seats</label>
+                                        <label for="">Số lượng ghế A trống</label>
                                         <input type="text" class="form-control" name="A_number_of_empty_seats" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">A_purchased</label>
+                                        <label for="">Số lượng ghế A đã mua</label>
                                         <input type="text" class="form-control" name="A_number_of_seats_purchased" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">A_price</label>
+                                        <label for="">Giá ghế A</label>
                                         <input type="text" class="form-control" name="A_price" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">B_seats</label>
+                                        <label for="">Số lượng ghế B đã mua</label>
                                         <input type="text" class="form-control" name="B_number_of_empty_seats" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">B_purchased</label>
+                                        <label for="">Số lượng ghế B đã mua</label>
                                         <input type="text" class="form-control" name="B_number_of_seats_purchased" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">B_price</label>
+                                        <label for="">Giá ghế B</label>
                                         <input type="text" class="form-control" name="B_price" id="" placeholder="">
                                     </div>
                                     <div class="form-group">

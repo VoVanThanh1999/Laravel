@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Models\MatchDetail;
+use App\Models\VMatch;
 use Illuminate\Http\Request;
+
 
 class MatchDetailController extends Controller
 {
@@ -62,4 +64,13 @@ class MatchDetailController extends Controller
         return redirect('/admin/matchdetails');
     }
 
+    public static function findMatchById($id){
+        $order = DB::table('v_matches')->where('id', $id)->get();
+        return $order;
+    }
+
+    public function getByIdMatch($id){
+        $match_details = DB::table('match_details')->where('id_match', $id)->get();
+        return view('MatchDetail.index', compact('match_details'));
+    }
 }

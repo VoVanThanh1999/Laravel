@@ -15,6 +15,9 @@ class OrderDetail extends Model
         'id_order',
         'id_match',
         'quantity',
+        'type_chair',
         'price',
+        'created_at',
+        'updated_at',
     ];
 }
