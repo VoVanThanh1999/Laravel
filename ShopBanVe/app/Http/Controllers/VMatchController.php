@@ -11,7 +11,7 @@ class VMatchController extends Controller
 {
     public function index()
     {
-        $v_matchs = DB::table('v_matches')->get();
+        $v_matchs = DB::table('v_matches')->orderBy('id','DESC')->get();
         return view('VMatch.index', compact('v_matchs'));
     }
 

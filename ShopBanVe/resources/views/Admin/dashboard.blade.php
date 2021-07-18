@@ -18,12 +18,7 @@
                                     <p>{{$a[0]}}</p>
                                 </h3>
                             </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons text-danger">warning</i>
-                                    <a href="javascript:;">Get More Space...</a>
-                                </div>
-                            </div>
+                             
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -37,11 +32,7 @@
                                     <p>{{$a[2]}}</p>
                                 </h3>
                             </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">date_range</i> Last 24 Hours
-                                </div>
-                            </div>
+                             
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -57,11 +48,7 @@
                                 </h3>
                                 
                             </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">local_offer</i> Tracked from Github
-                                </div>
-                            </div>
+                             
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -75,11 +62,7 @@
                                     <p>{{$a[3]}}</p>
                                 </h3>
                             </div>
-                            <div class="card-footer">
-                                <div class="stats">
-                                    <i class="material-icons">update</i> Just Updated
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

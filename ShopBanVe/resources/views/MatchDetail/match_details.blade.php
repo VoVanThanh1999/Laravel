@@ -16,10 +16,14 @@
                                 </p>
                             </div>
                             <div class="card-body">
-                           
-                            <a class="btn btn-success" href="{{ route('matchdetail.create') }}">CREATE MATCH DETAIL</a>
-                              
-                                <div class="table-responsive">
+                            @if($data['length'] == '0') 
+                                <a class="btn btn-success" href="/admin/matchdetails/createdByIdMatch/{{ $data['IdMatch'] }}">CREATE MATCH DETAIL</a>
+                   
+                            @endif
+                               
+                               
+                               
+                               <div class="table-responsive">
                                     <table class="table table-striped table-bordered">
                                         <thead class="thead-light">
                                             <th>Id</th>
@@ -33,7 +37,7 @@
                                             <th>Option</th>
                                         </thead>
                                         <tbody>
-                                            @foreach ($match_details as $match_detail)
+                                            @foreach ($data['match_details'] as $match_detail)
                                                 <tr>
                                                     <td>{{ $match_detail->id }}</td>
                                                     <td>{{ number_format($match_detail->A_number_of_empty_seats) }} ghế</td>
