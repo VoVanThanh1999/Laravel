@@ -21,8 +21,7 @@ class AdminController extends Controller
         $getAllMatches = DB::table('v_matches')
         ->count();
 
-        $getMatchThanCurrentDate = DB::table('v_matches')
-        ->where('date_start','>',' CURRENT_DATE')->get();
+        $getMatchThanCurrentDate = DB::select('SELECT count(id) as count FROM `v_matches` WHERE date_start > CURRENT_TIME');
 
         $totalNumberTicketSold = DB::table('orders')
         ->count();
@@ -30,11 +29,12 @@ class AdminController extends Controller
         $users = DB::table('users')
         ->count();
 
-        $a=array($getAllMatches, $getMatchThanCurrentDate, $totalNumberTicketSold, $users);
- 
-        // print_r($getMatchThanCurrentDate);
+        $a=array($getAllMatches, $getMatchThanCurrentDate[0]->count, $totalNumberTicketSold, $users);
+        
 
-        return view('Admin.dashboard', compact("a"));
+       
+
+     return view('Admin.dashboard', compact("a"));
     }
 
     public function login()

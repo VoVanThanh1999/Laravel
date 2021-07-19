@@ -88,8 +88,13 @@ Route::post('register/create', [AdminController::class, 'registerCreate'])->name
 
 // HomePage
 Route::get('/', [HomeController::class, 'homepage']);
+ 
+Route::get('/homepage/matchdetail/{id}', [HomeController::class, 'detailsPage'])->name('homepage.cart');
+Route::post('/homepage/orderticket', [HomeController::class, 'orderTicket'])->name('order.Ticket');
+ 
 Route::get('/homepage/matchdetail', [HomeController::class, 'cart'])->name('homepage.cart');
-Route::get('/homepage/vieworder', [HomeController::class, 'viewOrder']);
+Route::get('/homepage/vieworder/{sdt}', [HomeController::class, 'viewOrderById']);
+Route::post('/homepage/vieworder',[HomeController::class, 'viewOrder'])->name('viewOrder.viewOrder');
 
-
+ 
  

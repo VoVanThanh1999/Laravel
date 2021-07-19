@@ -22,7 +22,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Date_start</label>
-                                        <input type="text" class="form-control" name="date_start" id="datepicker" placeholder="">
+                                        <input type="datetime-local" class="form-control" name="date_start"  placeholder="">
                                     </div>
                                     <label for="">Image</label>
                                     <input type="file" class="form-control" name="image" id="image"  >

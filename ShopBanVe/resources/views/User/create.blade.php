@@ -31,10 +31,7 @@
                                         <label for="exampleInputPassword1">Phone</label>
                                         <input type="text" class="form-control" name="phone">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Avatar</label>
-                                        <input type="text" class="form-control" name="avatar">
-                                    </div>
+                               
                                     <button type="submit" class="btn btn-primary">Create</button>
                                   </form>
                             </div>

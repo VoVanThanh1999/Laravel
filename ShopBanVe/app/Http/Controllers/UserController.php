@@ -31,7 +31,7 @@ class UserController extends Controller
             'email'=> $request->email,
             'password' => Hash::make($request->password),
             'phone'=>$request->phone,
-            'avatar'=>$request->avatar
+            
              
         ]);
         return redirect('/admin/users');
@@ -51,7 +51,7 @@ class UserController extends Controller
             'email'=> $request->email,
             'password'=>$request->password,
             'phone'=>$request->phone,
-            'avatar'=>$request->avatar
+           
         ]);
 
         return redirect('/admin/users');

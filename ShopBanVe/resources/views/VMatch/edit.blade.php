@@ -16,8 +16,8 @@
                                 <form method="POST" action="{{ route('vmatch.update') }}"  enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="">Id</label>
-                                        <input type="text" class="form-control" name="id" value="{{ $v_match->id }}" id="" placeholder="">
+                                         
+                                        <input style="display:none" type="text" class="form-control" name="id" value="{{ $v_match->id }}" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Name</label>
@@ -25,14 +25,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Date_start</label>
-                                        <input type="text" class="form-control" name="date_start" value="{{ $v_match->date_start }}" id="datepicker" placeholder="">
+                                        <input type="datetime-local" class="form-control" name="date_start" value="{{ $v_match->date_start }}"   placeholder="">
                                     </div>
                                     <label for="">Image</label>
-                                    <input type="file" class="form-control" name="image" id="image"  >
+                                        <input type="file" class="form-control" name="image" id="image"  value="{{$v_match->image}}" >
+                                        <img width="85px" height="85px" src={{ URL::to('/') }}/upload/images/{{ $v_match->image }}>
                                     <div class="form-group">
                                         <label for="">information</label>
                                        
-                                        <textarea type="text" value="{{ $v_match->information }}"  name="information" id="information" placeholder=""></textarea>
+                                        <textarea type="text" name="information" id="information" placeholder="">{{ $v_match->information }}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </form>

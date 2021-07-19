@@ -15,16 +15,13 @@
                                     <img src="{{ URL::to('/') }}/upload/images/{{ $v_match->image }}"
                                         class="img img-responsive" />
                                 </a>
-
                                 <div class="product-price">
-                                    <a href="">{{ $v_match->name }}</a><br />
-                                   
+                                    <a >{{ $v_match->name }}</a><br />
                                     <span class="current-price">
                                         {{ $v_match->date_start }}
                                     </span>
                                 </div>
-
-                                <a href="{{ route('homepage.cart') }}"
+                                <a href="/homepage/matchdetail/{{$v_match->id}}"
                                     class="btn btn-cart text-center add-to-cart pull-right">
                                     <i class="fas fa-cart-plus"></i>
                                     Đặt vé
@@ -34,15 +31,8 @@
                         </div>
                     </div>
                 @endforeach
-
                 <div class="clearfix"></div>
-
-
-
-
-
             </div> <!-- End Latest products row-->
-
             <div class="clear"></div>
         </div> <!-- End products div-->
     </div> <!-- End container latest products-->

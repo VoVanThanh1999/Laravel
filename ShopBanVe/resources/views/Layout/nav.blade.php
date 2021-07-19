@@ -23,12 +23,7 @@
         <p>Order</p>
       </a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link" href="{{ route('index.orderdetail') }}">
-        <i class="material-icons">sports_soccer</i>
-        <p>Order Detail</p>
-      </a>
-    </li>
+   
     <li class="nav-item ">
       <a class="nav-link" href="{{ route('index.vmatch') }}">
         <i class="material-icons">sports_soccer</i>
