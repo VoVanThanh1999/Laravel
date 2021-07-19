@@ -16,7 +16,9 @@
                                 </p>
                             </div>
                             <div class="card-body">
-                                <a class="btn btn-success" href="{{ route('matchdetail.create') }}">CREATE MATCH DETAIL</a>
+                           
+                            <a class="btn btn-success" href="{{ route('matchdetail.create') }}">CREATE MATCH DETAIL</a>
+                              
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered">
                                         <thead class="thead-light">
@@ -27,7 +29,7 @@
                                             <th>Số lượng ghế B trống</th>
                                             <th>Số lượng ghế B đã mua</th>
                                             <th>Giá ghế B</th>
-                                            <th>Id_match</th>
+                                            <th>Tên trận đấu</th>
                                             <th>Option</th>
                                         </thead>
                                         <tbody>

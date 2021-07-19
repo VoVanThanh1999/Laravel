@@ -28,7 +28,6 @@ class OrderController extends Controller
             'full_name' => $request->full_name,
             'address1' => $request->address1,
             'address2' => $request->address2,
-            'id_card' => $request->id_card,
             'phone' => $request->phone,
             'email' => $request->email
         ]);

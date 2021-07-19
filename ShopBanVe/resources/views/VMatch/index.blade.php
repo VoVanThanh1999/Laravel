@@ -24,7 +24,7 @@
                                             <th>Name</th>
                                             <th>DateStart</th>
                                             <th>Image</th>
-                                            <th>Imformation</th>
+                                            {{-- <th>Imformation</th> --}}
                                             <th>Option</th>
                                         </thead>
                                         <tbody>
@@ -33,14 +33,17 @@
                                                     <td>{{ $v_match->id }}</td>
                                                     <td>{{ $v_match->name }}</td>
                                                     <td>{{ $v_match->date_start }}</td>
-                                                    <td>{{ $v_match->image }}</td>
-                                                    <td>{{ $v_match->information }}</td>
+                                                    <td><img width="85px" height="85px" src={{ URL::to('/') }}/upload/images/{{ $v_match->image }}></td>
+                                                    {{-- <td>{{ $v_match->information }}</td> --}}
                                                     <td>
                                                         <a href="/admin/vmatches/edit/{{ $v_match->id }}">
                                                             <button class="btn btn-danger">Edit</button>
                                                         </a>
                                                         <a href="/admin/vmatches/delete/{{ $v_match->id }}">
                                                             <button class="btn btn-warning">Delete</button>
+                                                        </a>
+                                                        <a href="./matchdetails/getByIdMatch/{{ $v_match->id }}">
+                                                            <button class="btn btn-primary">See details</button>
                                                         </a>
                                                     </td>
                                                 </tr>

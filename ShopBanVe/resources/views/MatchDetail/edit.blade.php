@@ -16,8 +16,8 @@
                                 <form method="POST" action="{{ route('matchdetail.update') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="">Id</label>
-                                        <input type="text" class="form-control" name="id" value="{{ $match_detail->id }}" id="" placeholder="">
+                                       
+                                        <input style="display: none;"  type="text" class="form-control" name="id" value="{{ $match_detail->id }}" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Số lượng ghế A trống</label>
@@ -44,8 +44,8 @@
                                         <input type="text" class="form-control" name="B_price" value="{{ $match_detail->B_price }}" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">id_match</label>
-                                        <input type="text" class="form-control" name="id_match" value="{{ $match_detail->id_match }}" id="" placeholder="">
+                                     
+                                        <input type="text" style="display: none;" class="form-control" name="id_match" id="" placeholder="" value="{{$match_detail->id_match}}">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </form>

@@ -46,9 +46,13 @@
                                         <input type="text" class="form-control" name="B_price" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="">id_match</label>
-                                        <input type="text" class="form-control" name="id_match" id="" placeholder="">
-                                    </div>
+                                        <label for="">Danh sách trận đấu</label>
+                                        <select class="form-control" name="id_match">
+                                            @foreach($matchs as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                       
                                     <button type="submit" class="btn btn-primary">Create</button>
                                   </form>
                             </div>
