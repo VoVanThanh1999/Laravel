@@ -69,10 +69,10 @@ class OrderController extends Controller
             'full_name' => $request->full_name,
             'address1' => $request->address1,
             'address2' => $request->address2,
-            'id_card' => $request->id_card,
+          
             'phone' => $request->phone,
             'email' => $request->email,
-            'updated_at' =>date("Y/m/d"),
+            'updated_at' =>gmdate('Y-m-d h:i:s \G\M\T'),
             'id_match' => $request->id_match,
             'numOfChairA' => $request->numOfChairA,
             'numOfChairB' => $request->numOfChairB,

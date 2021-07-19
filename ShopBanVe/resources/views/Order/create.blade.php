@@ -14,9 +14,7 @@
                             </div>
                             <div class="card-body">
                                 <form method="POST" action="{{ route('store.order') }}">
-                                    @csrf
-                            
-                                   
+                                    @csrf                      
                                     <div class="form-group">
                                         <label for="">Fullname</label>
                                         <input type="text" class="form-control" name="full_name" id="" placeholder="">
@@ -29,6 +27,7 @@
                                         <label for="">Address2</label>
                                         <input type="text" class="form-control" name="address2" id="" placeholder="">
                                     </div>
+
                               
                                     <div class="form-group">
                                         <label for="">Phone</label>
@@ -44,7 +43,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">Ngày đặt</label>
-                                        <input type="date" class="form-control" name="created_at" id="" placeholder="">
+                                        <input type="datetime-local" class="form-control" name="created_at" id="" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Số lượng ghế A</label>
@@ -66,8 +65,14 @@
                                         <label for="">Tổng tiền</label>
                                         <input type="number" class="form-control" name="totalPrice" id="" placeholder="">
                                     </div>
-                                    
-
+                                    <div class="form-group">
+                                        <label for="">Phone</label>
+                                        <input type="text" class="form-control" name="phone" id="" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="text" class="form-control" name="email" id="" placeholder="">
+                                    </div>
                                     <button type="submit" class="btn btn-primary">Create</button>
                                   </form>
                             </div>

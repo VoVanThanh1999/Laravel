@@ -13,15 +13,16 @@ class TestMail extends Mailable
 
     public $details;
 
+    public $testMail = 'Test mail';
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-      
+    public function __construct( $details)
+    {   
+          $this->$details =  $details;
     }
 
     /**
@@ -30,7 +31,8 @@ class TestMail extends Mailable
      * @return $this
      */
     public function build()
-    {
-        return $this->subject('Test Mail  From  Media')->view('emails.TestMail');
+    {   
+        $details = $this->details;
+        return $this->subject('Hệ thống đặt vé')->view('emails.TestMail', compact('details'));
     }
 }

@@ -41,9 +41,9 @@
                                 <div class="card-icon">
                                     <i class="material-icons">info_outline</i>
                                 </div>
-                                <p class="card-category">SL vé sắp diễn ra</p>
+                                <p class="card-category">SL trận đấu sắp diễn ra</p>
                                 <h3 class="card-title">
-                                    <p>{{$a[2]}}</p>
+                                    <p>{{$a[1]}}</p>
 
                                 </h3>
                                 

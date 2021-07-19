@@ -22,7 +22,7 @@ class VMatchController extends Controller
 
     public function store(Request $request)
     {
-
+        // $request->validate($request, ['file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',]);
         $file_name = $request->file('image')->getClientOriginalName();
         $request->file('image')->move('upload/images',  $file_name );
 

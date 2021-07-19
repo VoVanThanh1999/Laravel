@@ -35,10 +35,7 @@
                                         <label for="exampleInputPassword1">Phone</label>
                                         <input type="text" class="form-control" name="phone" value="{{ $user->phone }}" placeholder="Phone">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Avatar</label>
-                                        <input type="text" class="form-control" name="avatar" value="{{ $user->avatar }}" placeholder="Avatar">
-                                    </div>
+                               
                                     <button type="submit" class="btn btn-primary">Update</button>
                                   </form>
                             </div>

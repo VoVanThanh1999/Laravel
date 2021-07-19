@@ -9,8 +9,6 @@
  
 </head>
 <body>
-     
-   
-    <p>Thanks you</p>
+    <p>Đơn hàng của bạn đã được xử lý vui lòng dùng SDT để kiểm tra chi tiết trên hệ thống</p>
 </body>
 </html>

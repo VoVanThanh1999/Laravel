@@ -79,4 +79,6 @@ Route::post('register/create', [AdminController::class, 'registerCreate'])->name
 
 // HomePage
 Route::get('/', [HomeController::class, 'homepage']);
+Route::get('/homepage/matchdetail/{id}', [HomeController::class, 'detailsPage'])->name('homepage.cart');
+Route::post('/homepage/orderticket', [HomeController::class, 'orderTicket'])->name('order.Ticket');
  
