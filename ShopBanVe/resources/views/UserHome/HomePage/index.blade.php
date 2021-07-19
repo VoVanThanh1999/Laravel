@@ -11,13 +11,13 @@
                     <div class="col-md-3">
                         <div class="product-item">
                             <div class="product-borde-inner">
-                                <a href="product_single.html">
+                                <a href="">
                                     <img src="{{ URL::to('/') }}/upload/images/{{ $v_match->image }}"
                                         class="img img-responsive" />
                                 </a>
 
                                 <div class="product-price">
-                                    <a href="product_single.html">{{ $v_match->name }}</a><br />
+                                    <a href="">{{ $v_match->name }}</a><br />
                                    
                                     <span class="current-price">
                                         {{ $v_match->date_start }}

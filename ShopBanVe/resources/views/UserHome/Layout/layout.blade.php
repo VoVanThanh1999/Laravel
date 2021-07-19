@@ -33,6 +33,7 @@
                 @yield('slideshow')
                 @yield('content')
                 @yield('cart')
+                @yield('vieworder')
                 <div class="services-area">
                     <div class="services">
                         <div class="container">

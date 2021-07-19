@@ -2,9 +2,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-
-
-
             </div>
             <div class="col-md-8">
                 <div class="subscribe wow slideInRight" data-wow-duration="1s" data-wow-delay="0s"
