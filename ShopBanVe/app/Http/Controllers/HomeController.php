@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Models\VMatch;
 use App\Models\MatchDetail;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +12,8 @@ class HomeController extends Controller
     public function homepage()
     {
         $v_matches = DB::table('v_matches')->get();
-        return view('UserHome.HomePage.index', compact('v_matches'));
+        $images = DB::table('images')->get();
+        return view('UserHome.HomePage.index', compact('v_matches', 'images'));
     }
 
     public function cart()

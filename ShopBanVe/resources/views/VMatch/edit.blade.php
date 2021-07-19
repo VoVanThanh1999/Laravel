@@ -28,11 +28,11 @@
                                         <input type="text" class="form-control" name="date_start" value="{{ $v_match->date_start }}" id="datepicker" placeholder="">
                                     </div>
                                     <label for="">Image</label>
-                                        <input type="file" class="form-control" name="image" id="image"  >
+                                    <input type="file" class="form-control" name="image" id="image"  >
                                     <div class="form-group">
                                         <label for="">information</label>
                                        
-                                        <textarea type="text" value="{{ $v_match->information }}  name="information" id="information" placeholder=""></textarea>
+                                        <textarea type="text" value="{{ $v_match->information }}"  name="information" id="information" placeholder=""></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </form>

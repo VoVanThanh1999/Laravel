@@ -1,5 +1,5 @@
 @extends('Layout.layout')
-@section('matchdetail_edit')
+@section('image_edit')
     <div class="main-panel">
         <!-- Navbar -->
         @include('Layout.header')
@@ -10,26 +10,13 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Create Match</h4>
+                                <h4 class="card-title">Create Image</h4>
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="{{ route('store.vmatch') }}"  enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('store.image') }}"  enctype="multipart/form-data">
                                     @csrf
-                                    
-                                    <div class="form-group">
-                                        <label for="">Name</label>
-                                        <input type="text" class="form-control" name="name" id="" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Date_start</label>
-                                        <input type="text" class="form-control" name="date_start" id="datepicker" placeholder="">
-                                    </div>
                                     <label for="">Image</label>
                                     <input type="file" class="form-control" name="image" id="image"  >
-                                    <div class="form-group">
-                                        <label for="">Information</label>
-                                        <textarea type="text"  name="information" id="information" placeholder=""></textarea>
-                                    </div>
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </form>
                             </div>

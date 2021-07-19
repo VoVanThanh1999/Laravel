@@ -11,47 +11,37 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="{{ asset('images/slider/slider1.jpg') }}" alt="Chania">
-                <div class="carousel-caption">
-                    <div class="slide-header-text wow slideInLeft" data-wow-duration="1s"
-                        data-wow-delay="0s" data-wow-offset="10"></div> <br />
-                    <a href="products.html" class="btn btn-red slider-link wow lightSpeedIn"
-                        data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10"> </a>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ asset('images/slider/slider2.jpg') }}" alt="Chania">
-                <div class="carousel-caption">
-                    <div class="slide-header-text wow rotateIn" data-wow-duration="1s"
-                        data-wow-delay="0s" data-wow-offset="10"> </div> <br />
-                    <a href="products.html" class="btn btn-red slider-link wow lightSpeedIn"
-                        data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10"> </a>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ asset('images/slider/slider3.jpg') }}" alt="Flower">
-                <div class="carousel-caption">
-                    <div class="slide-header-text wow rollIn" data-wow-duration="1s" data-wow-delay="0s"
-                        data-wow-offset="10"> </div> <br />
-                    <a href="products.html" class="btn btn-red slider-link wow zoomIn"
-                        data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10"> </a>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="{{ asset('images/slider/slider4.jpg') }}" alt="Flower">
-                <div class="carousel-caption">
-                    <div class="slide-header-text wow bounceInLeft" data-wow-duration="1s"
-                        data-wow-delay="0s" data-wow-offset="10"> </div> <br />
-                    <a href="products.html" class="btn btn-red slider-link wow slideInRight"
-                        data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10"> </a>
-                </div>
-            </div>
+        @foreach($images as $image)
+            @if($image->id==5 )
+                <div class="item active">
+                    <img style="width: 100%; height:550px" src="{{ URL::to('/') }}/upload/images/{{ $image->image }}" alt="Chania">
+                        <div class="carousel-caption">
+                            <div class="slide-header-text wow slideInLeft" data-wow-duration="1s"
+                            data-wow-delay="0s" data-wow-offset="10"></div> <br />
+                            <a href="products.html" class="btn btn-red slider-link wow lightSpeedIn"
+                            data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10"> </a>
+                        </div>
+                    </div>
+            @else
+                <div class="item">
+                    <img style="width: 100%;  height:550px" src="{{ URL::to('/') }}/upload/images/{{ $image->image }}" alt="Chania">
+                        <div class="carousel-caption">
+                            <div class="slide-header-text wow slideInLeft" data-wow-duration="1s"
+                            data-wow-delay="0s" data-wow-offset="10"></div> <br />
+                            <a href="products.html" class="btn btn-red slider-link wow lightSpeedIn"
+                            data-wow-duration="1s" data-wow-delay="0s" data-wow-offset="10"> </a>
+                        </div>
+                    </div>
+            
+            @endif
+           
+                
+                
+                
+                 
+            
+            @endforeach
         </div>
-
         <!-- Left and right controls -->
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

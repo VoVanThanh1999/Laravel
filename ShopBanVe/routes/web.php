@@ -8,6 +8,7 @@ use App\Http\Controllers\VMatchController;
 use App\Http\Controllers\MatchDetailController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,6 +69,14 @@ Route::post('admin/matchdetails/create', [MatchDetailController::class, 'store']
 Route::get('admin/matchdetails/edit/{id}', [MatchDetailController::class, 'edit'])->name('matchdetail.edit');
 Route::post('admin/matchdetails/update', [MatchDetailController::class, 'update'])->name('matchdetail.update');
 Route::get('admin/matchdetails/delete/{id}', [MatchDetailController::class, 'delete'])->name('matchdetail.delete');
+
+// Image
+Route::get('admin/images', [ImageController::class, 'index'])->name('index.image');
+Route::get('admin/images/create', [ImageController::class, 'create'])->name('image.create');
+Route::post('admin/images/create', [ImageController::class, 'store'])->name('store.image');
+Route::get('admin/images/edit/{id}', [ImageController::class, 'edit'])->name('image.edit');
+Route::post('admin/images/update', [ImageController::class, 'update'])->name('image.update');
+Route::get('admin/images/delete/{id}', [ImageController::class, 'delete'])->name('image.delete');
 
 //Admin
 Route::get('admin', [AdminController::class, 'index']);

@@ -43,6 +43,8 @@
         @yield('matchdetail_edit')
         @yield('orderdetail')
         @yield('orderdetail_edit')
+        @yield('image')
+        @yield('image_edit')
 </body>
 
 </html>

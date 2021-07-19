@@ -1,5 +1,5 @@
 @extends('Layout.layout')
-@section('matchdetail_edit')
+@section('order_edit')
     <div class="main-panel">
         <!-- Navbar -->
         @include('Layout.header')
@@ -10,27 +10,18 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title">Create Match</h4>
+                                <h4 class="card-title">Edit Image</h4>
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="{{ route('store.vmatch') }}"  enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('image.update') }}"  enctype="multipart/form-data">
                                     @csrf
-                                    
                                     <div class="form-group">
-                                        <label for="">Name</label>
-                                        <input type="text" class="form-control" name="name" id="" placeholder="">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Date_start</label>
-                                        <input type="text" class="form-control" name="date_start" id="datepicker" placeholder="">
+                                        <label for="">ID</label>
+                                        <input type="text" class="form-control" name="id" value="{{ $image->id }}">
                                     </div>
                                     <label for="">Image</label>
                                     <input type="file" class="form-control" name="image" id="image"  >
-                                    <div class="form-group">
-                                        <label for="">Information</label>
-                                        <textarea type="text"  name="information" id="information" placeholder=""></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </form>
                             </div>
                         </div>
@@ -50,7 +41,4 @@
         </script>
     </div>
 @endsection
-
-
-<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
  

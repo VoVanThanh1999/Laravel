@@ -41,5 +41,11 @@
         <p>Match Detail</p>
       </a>
     </li>
+    <li class="nav-item ">
+      <a class="nav-link" href="{{ route('index.image') }}">
+        <i class="material-icons">sports_soccer</i>
+        <p>Image</p>
+      </a>
+    </li>
   </ul>
 </div>
