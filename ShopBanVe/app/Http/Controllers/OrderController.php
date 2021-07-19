@@ -56,12 +56,7 @@ class OrderController extends Controller
     public function update(Request $request)
     {   
         
-        $details = [
-            'title' => 'mail from surside Media',
-            'body' => 'this is for testing mail using gmail.com'
-        ];
-        Mail::to("boss.nt1999@gmail.com")->send(new TestMail($details));
-
+         
        
         DB::table('orders')->where('id', $request->id)->update([
             'id' => $request->id,
@@ -69,7 +64,6 @@ class OrderController extends Controller
             'full_name' => $request->full_name,
             'address1' => $request->address1,
             'address2' => $request->address2,
-          
             'phone' => $request->phone,
             'email' => $request->email,
             'updated_at' =>gmdate('Y-m-d h:i:s \G\M\T'),

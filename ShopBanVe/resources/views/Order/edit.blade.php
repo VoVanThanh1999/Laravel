@@ -23,12 +23,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Status</label>
-
-                                    @if($order->status == '1')
-                                    <input type="checkbox" value="0" name="status" {{ $order->status == 1 ? ' checked="checked"' : '' }}>
-                                    @else
-                                    <input type="checkbox" value="1" name="status" {{ $order->status == 1 ? ' checked="checked"' : '' }}>
-                                    @endif
+                                    <select class="form-control" name="status" id="" value="{{ $order->status }}" >
+                                        <option {{($order->status ) == '0' ? 'selected' : '' }}  value="1">Đang chờ xác nhận</option>
+                                        <option {{($order->status ) == '1' ? 'selected' : '' }}  value="2">Đã xác nhận</option>
+                                        <option {{($order->status ) == '2' ? 'selected' : '' }} value="3">Đang giao</option>
+                                        <option {{($order->status ) == '3' ? 'selected' : '' }} value="4">Giao thành công</option>
+                                    </select>
+                                    
 
                                 </div>
                                 <div class="form-group">

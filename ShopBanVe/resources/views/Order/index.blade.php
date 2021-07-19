@@ -41,10 +41,18 @@
                                     <tbody>
                                         @foreach ($orders as $order)
                                         <tr>
-                                            @if($order ->status =='0')
-                                            <td>Đang chờ xác nhận</td>
-                                            @else
-                                            <td>Đã xác nhận</td>
+                                            @if($order->status =='0')
+                                                <td>Đang chờ xác nhận</td>
+                                            
+                                            @elseif($order->status =='1')
+                                                <td>Đã xác nhận</td>
+                                            
+                                            @elseif($order->status =='2')
+                                                <td>Đang giao</td>
+                                            
+                                            @else 
+                                                <td>Giao thành công</td>
+                                            
                                             @endif
                                             <td>{{ $order->full_name }}</td>
                                             <td>{{ $order->address1 }}</td>

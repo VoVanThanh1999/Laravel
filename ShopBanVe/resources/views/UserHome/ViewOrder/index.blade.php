@@ -9,8 +9,12 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <div class="cart_container">
-                    <div class="cart_title">Xem đơn hàng</div>
-                    <table class="table table-bordered">
+                @if(count($orders) =='0')         
+                     <h1> Đơn đặt hàng không tồn tại</h1>
+                @else
+                <div class="cart_title">Xem đơn hàng</div>
+                    @foreach ($orders as $order)
+                      <table class="table table-bordered">
                         <thead>
                           <tr>
                             <th scope="col">Thông tin đơn hàng</th>
@@ -20,37 +24,56 @@
                         <tbody>
                           <tr>
                             <td>
-                                Trạng thái: 
+                            
+                                @if($order->status  == 0)
+                                  Trạng thái: Đang chờ xác nhận
+                                
+                                @elseif($order->status == 1)
+                                  Trạng thái: Đã xác nhận
+                                
+                                @elseif($order->status == 2)
+                                  Trạng thái: Đang vận chuyển
+                                
+                                @elseif($order->status == 3)
+                                  Trạng thái: Đã giao thành công
+                                
+                                @endif
+
+                                
                                 <br>
-                                Ngày thêm: 
+                                Tên trận đấu: {{ $order->id_match  }}
                                 <br>
-                                Ngày cập nhật:
+                                Ngày đặt vé : {{$order->created_at}}
                                 <br>
-                                Số lượng ghế A:
+                                Số lượng ghế A: : {{$order->numOfChairA}}
                                 <br>
-                                Số lượng ghế B:
+                                Số lượng ghế B: {{$order->numOfChairB}}
                                 <br>
-                                Tổng tiền ghế A:
+                                Tổng tiền ghế A: {{$order->totalMoneyChairA}}
                                 <br>
-                                Tổng tiền ghế B:
+                                Tổng tiền ghế B: {{$order->totalMoneyChairA}}
                                 <br>
-                                Tổng tiền:
+                                Tổng tiền: {{$order->totalPrice}}
                             </td>
                             <td>
-                                Họ và tên:
+                                Họ và tên: {{$order->full_name}}
                                 <br>
-                                Email: 
+                                Email: {{$order->email}}
                                 <br>
-                                Số điện thoại:
+                                Số điện thoại:  {{$order->phone}}
                                 <br>
-                                Địa chỉ 1:
+                                Địa chỉ 1:  {{$order->address1}}
                                 <br>
-                                Địa chỉ 2:
+                                Địa chỉ 2:  {{$order->address2}}
                             </td>
                           </tr>
                         </tbody>
                       </table>
+                    
+                    @endforeach
                 </div>
+                @endif
+                  
             </div>
         </div>
     </div>

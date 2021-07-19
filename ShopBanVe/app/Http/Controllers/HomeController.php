@@ -71,19 +71,19 @@ class HomeController extends Controller
                     'ngayDat' => $request->created_at,
                 ]
             ];
-
-
             Mail::to("$request->email")->send(new TestMail("Đơn hàng của bạn đã xác nhận vụi lòng dùng SDT để xem chi tiết trên hệ thống"));
-
             return back()->with('success', 'Bạn đã đặt vé thành công !');     
-
         }
+    }
+    public function viewOrder(Request $request){
 
-       
+        $orders = DB::select("SELECT * FROM `orders` WHERE Phone ='$request->sdt'");
  
+
+        return view('UserHome.ViewOrder.index',compact('orders'));
     }
 
-    public function viewOrder()
+    public function viewOrderById()
     {
         return view('UserHome.ViewOrder.index');
  

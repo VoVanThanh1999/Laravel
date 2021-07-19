@@ -18,8 +18,9 @@
             margin-left: -89px;
             margin-top: 10px;
         ">
-            <form action="#" method="post">
-                <input type="search" name="Search" placeholder="Tìm kiếm vé đã mua bằng SĐT"
+            <form method="POST" action="{{ route('viewOrder.viewOrder') }}">
+            @csrf
+                <input type="search" name="sdt" placeholder="Tìm kiếm vé đã mua bằng SĐT"
                     required="">
                 <button type="submit" class="btn btn-default" aria-label="Left Align">
                     <i class="fa fa-search" aria-hidden="true"> </i>
