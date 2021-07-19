@@ -11,19 +11,16 @@
                     <div class="col-md-3">
                         <div class="product-item">
                             <div class="product-borde-inner">
-                                <a href="product_single.html">
+                                <a href="">
                                     <img src="{{ URL::to('/') }}/upload/images/{{ $v_match->image }}"
                                         class="img img-responsive" />
                                 </a>
-
                                 <div class="product-price">
                                     <a >{{ $v_match->name }}</a><br />
-                                   
                                     <span class="current-price">
                                         {{ $v_match->date_start }}
                                     </span>
                                 </div>
-
                                 <a href="/homepage/matchdetail/{{$v_match->id}}"
                                     class="btn btn-cart text-center add-to-cart pull-right">
                                     <i class="fas fa-cart-plus"></i>
@@ -34,15 +31,8 @@
                         </div>
                     </div>
                 @endforeach
-
                 <div class="clearfix"></div>
-
-
-
-
-
             </div> <!-- End Latest products row-->
-
             <div class="clear"></div>
         </div> <!-- End products div-->
     </div> <!-- End container latest products-->

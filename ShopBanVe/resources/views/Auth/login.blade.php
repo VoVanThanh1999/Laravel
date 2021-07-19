@@ -119,7 +119,7 @@
                                             <i class="material-icons">mail</i>
                                         </span>
                                     </div>
-                                    <input type="email" id="inputEmail" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email..."> \
+                                    <input type="email" id="inputEmail" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email...">
                                 </div>
                                 <span class="text-danger">@error('email') {{ $message }} @enderror</span>
                                 <div class="input-group">

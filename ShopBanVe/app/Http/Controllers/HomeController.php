@@ -18,6 +18,7 @@ class HomeController extends Controller
 
     public function detailsPage($id)
     {
+ 
         $matchDetails = DB::select("SELECT *, t2.id as 'IdMatchDetail'  FROM `v_matches` as t1 INNER JOIN match_details as t2 ON t1.id = t2.id_match WHERE t1.id = $id");
 
         return view('UserHome.Cart.cart', compact('matchDetails'));
@@ -79,5 +80,12 @@ class HomeController extends Controller
         }
 
        
+ 
+    }
+
+    public function viewOrder()
+    {
+        return view('UserHome.ViewOrder.index');
+ 
     }
 }
