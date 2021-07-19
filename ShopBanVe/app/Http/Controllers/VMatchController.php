@@ -50,7 +50,7 @@ class VMatchController extends Controller
                 'id' => $request->id,
                 'name' => $request->name,
                 'date_start' => $request->date_start,
-                'image' => '',
+           
                 'information' => $request->information,
             ]);
         }else{
@@ -73,6 +73,8 @@ class VMatchController extends Controller
     public function delete($id)
     {
         DB::table('v_matches')->where('id', $id)->delete();
+        DB::table('match_details')->where('id_match', $id)->delete();
+
         return redirect('/admin/vmatches');
     }
 }
