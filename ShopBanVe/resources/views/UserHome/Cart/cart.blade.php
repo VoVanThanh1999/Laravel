@@ -20,28 +20,28 @@
                                    
                                     <div class="cart_item_name cart_info_col">
                                         <div class="cart_item_title">Trận đấu</div>
-                                        <div class="cart_item_text">{{$matchDetails[0]->name}}</div>
+                                        <div class="cart_item_text">{{$matchDetails[0]->name}} </div>
                                     </div>
                                     <div>
                                       <div class="cart_item_title">Ngày thi đấu</div>
-                                        <div class="cart_item_text">{{$matchDetails[0]->date_start}}</div>
+                                        <div class="cart_item_text">| {{$matchDetails[0]->date_start}}</div>
                                     </div>
                                 
                                     <div class="cart_item_quantity cart_info_col">
-                                        <div class="cart_item_title">SL ghế trống khán đài A</div>
-                                        <div class="cart_item_text">{{$matchDetails[0]->A_number_of_empty_seats}}</div>
+                                        <div class="cart_item_title">SL ghế trống khán đài A |</div>
+                                        <div class="cart_item_text">| {{number_format($matchDetails[0]->A_number_of_empty_seats)}} ghế</div>
                                     </div>
                                     <div class="cart_item_total cart_info_col">
-                                        <div class="cart_item_title">Giá khán đài A</div>
-                                        <div class="cart_item_text">{{$matchDetails[0]->A_price}}</div>
+                                        <div class="cart_item_title">Giá khán đài A |</div>
+                                        <div class="cart_item_text">{{number_format($matchDetails[0]->A_price)}} vnđ</div>
                                     </div>
                                     <div class="cart_item_price cart_info_col">
-                                        <div class="cart_item_title">SL ghế trống khán đài B</div>
-                                        <div class="cart_item_text">{{$matchDetails[0]->B_number_of_empty_seats}}</div>
+                                        <div class="cart_item_title">SL ghế trống khán đài B |</div>
+                                        <div class="cart_item_text">{{number_format($matchDetails[0]->B_number_of_empty_seats)}} ghế</div>
                                     </div>
                                     <div class="cart_item_total cart_info_col">
                                         <div class="cart_item_title">Giá khán đài B</div>
-                                        <div class="cart_item_text">{{$matchDetails[0]->B_price}}</div>
+                                        <div class="cart_item_text">{{number_format($matchDetails[0]->B_price)}} vnđ</div>
                                     </div>
                                 </div>
                             </li>
