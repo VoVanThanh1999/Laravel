@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
-    
-    public function index(){
-        $orders = DB::table('orders')->get();
-        return view('Order.index', compact('orders')); 
+
+    public function index()
+    {
+        $orders = DB::select("SELECT * FROM `orders`   ORDER BY id DESC");
+
+        return view('Order.index', compact('orders'));
     }
 
     public function create()
@@ -25,10 +27,10 @@ class OrderController extends Controller
     }
 
     public function store(Request $request)
-    {   
+    {
 
         DB::table('orders')->insert([
-             
+
             'status' => 0,
             'full_name' => $request->full_name,
             'address1' => $request->address1,
@@ -47,7 +49,7 @@ class OrderController extends Controller
     }
 
     public function edit($id)
-    {   
+    {
 
 
         $order = DB::table('orders')->where('id', $id)->first();
@@ -55,10 +57,10 @@ class OrderController extends Controller
     }
 
     public function update(Request $request)
-    {   
-        
-         
-       
+    {
+
+
+
         DB::table('orders')->where('id', $request->id)->update([
             'id' => $request->id,
             'status' => $request->status,
@@ -67,8 +69,8 @@ class OrderController extends Controller
             'address2' => $request->address2,
             'phone' => $request->phone,
             'email' => $request->email,
-            'updated_at' =>gmdate('Y-m-d h:i:s \G\M\T'),
-            'id_match' => $request->id_match,
+            'updated_at' => gmdate('Y-m-d h:i:s \G\M\T'),
+
             'numOfChairA' => $request->numOfChairA,
             'numOfChairB' => $request->numOfChairB,
             'totalMoneyChairA' => $request->totalMoneyChairA,

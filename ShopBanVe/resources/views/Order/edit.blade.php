@@ -23,13 +23,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Status</label>
-                                    <select class="form-control" name="status" id="" value="{{ $order->status }}" >
-                                        <option {{($order->status ) == '0' ? 'selected' : '' }}  value="1">Đang chờ xác nhận</option>
-                                        <option {{($order->status ) == '1' ? 'selected' : '' }}  value="2">Đã xác nhận</option>
-                                        <option {{($order->status ) == '2' ? 'selected' : '' }} value="3">Đang giao</option>
-                                        <option {{($order->status ) == '3' ? 'selected' : '' }} value="4">Giao thành công</option>
+                                    <select class="form-control" name="status" id="" value="{{ $order->status }}">
+                                        <option {{($order->status ) == '0' ? 'selected' : '' }} value="0">Đang chờ xác nhận</option>
+                                        <option {{($order->status ) == '1' ? 'selected' : '' }} value="1">Đã xác nhận</option>
+                                        <option {{($order->status ) == '2' ? 'selected' : '' }} value="2">Đang giao</option>
+                                        <option {{($order->status ) == '3' ? 'selected' : '' }} value="3">Giao thành công</option>
                                     </select>
-                                    
+
 
                                 </div>
                                 <div class="form-group">
@@ -57,12 +57,12 @@
 
                                 <div class="form-group">
                                     <label for="">Ngày đặt</label>
-                                    <input disabled type="text" class="form-control" name="created_at" value="{{ $order->created_at }}"  placeholder="">
+                                    <input disabled type="text" class="form-control" name="created_at" value="{{ $order->created_at }}" placeholder="">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Trận đấu</label>
-                                    <input disabled type="text" class="form-control" name="id_match" value="{{ $order->id_match }}"   placeholder="">
+                                    <input disabled type="text" class="form-control" name="id_match" value="{{ $order->id_match }}" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="">SL ghế A</label>
@@ -81,7 +81,7 @@
                                     <input type="text" class="form-control" name="totalMoneyChairB" value="{{ $order->totalMoneyChairB }}" id="" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for=""> Tổng tiền  </label>
+                                    <label for=""> Tổng tiền </label>
                                     <input type="text" class="form-control" name="totalPrice" value="{{ $order->totalPrice }}" id="" placeholder="">
                                 </div>
 

@@ -35,24 +35,24 @@
                                         <th>SL ghế B </th>
                                         <th>Tổng tiền ghế A </th>
                                         <th>Tổng tiền ghế B </th>
-                                        <th>Tổng tiền  </th>
+                                        <th>Tổng tiền </th>
                                         <th>Option</th>
                                     </thead>
                                     <tbody>
                                         @foreach ($orders as $order)
                                         <tr>
                                             @if($order->status =='0')
-                                                <td>Đang chờ xác nhận</td>
-                                            
+                                            <td>Đang chờ xác nhận</td>
+
                                             @elseif($order->status =='1')
-                                                <td>Đã xác nhận</td>
-                                            
+                                            <td>Đã xác nhận</td>
+
                                             @elseif($order->status =='2')
-                                                <td>Đang giao</td>
-                                            
-                                            @else 
-                                                <td>Giao thành công</td>
-                                            
+                                            <td>Đang giao</td>
+
+                                            @else
+                                            <td>Giao thành công</td>
+
                                             @endif
                                             <td>{{ $order->full_name }}</td>
                                             <td>{{ $order->address1 }}</td>
@@ -61,7 +61,7 @@
                                             <td>{{ $order->email }}</td>
                                             <td>{{ $order->created_at }}</td>
                                             <td>{{ $order->updated_at }}</td>
-                                            <td>{{ $order->id_match}}</td>
+                                            <td><?php echo \App\Http\Controllers\OrderDetailController::findMatchById($order->id_match)[0]->name ?></td>
                                             <td>{{ $order->numOfChairA}}</td>
                                             <td>{{ $order->numOfChairB}}</td>
                                             <td>{{ $order->totalMoneyChairA}}</td>
