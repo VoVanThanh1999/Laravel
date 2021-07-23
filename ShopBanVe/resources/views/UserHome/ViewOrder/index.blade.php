@@ -49,11 +49,11 @@
                                 <br>
                                 Số lượng ghế B: {{$order->numOfChairB}}
                                 <br>
-                                Tổng tiền ghế A: {{$order->totalMoneyChairA}}
+                                Tổng tiền ghế A: {{number_format($order->totalMoneyChairA)}} vnđ  
                                 <br>
-                                Tổng tiền ghế B: {{$order->totalMoneyChairA}}
+                                Tổng tiền ghế B: {{number_format($order->totalMoneyChairB)}} vnđ
                                 <br>
-                                Tổng tiền: {{$order->totalPrice}}
+                                Tổng tiền: {{number_format($order->totalPrice)}} vnđ
                             </td>
                             <td>
                                 Họ và tên: {{$order->full_name}}

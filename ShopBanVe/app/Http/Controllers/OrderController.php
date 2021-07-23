@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
+    
     public function index(){
         $orders = DB::table('orders')->get();
         return view('Order.index', compact('orders')); 

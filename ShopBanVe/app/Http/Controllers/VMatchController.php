@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class VMatchController extends Controller
 {
+    
     public function index()
     {
         $v_matchs = DB::table('v_matches')->orderBy('id','DESC')->get();

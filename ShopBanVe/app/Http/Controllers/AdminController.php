@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    
     public function index()
     {
         return view('Admin.dashboard');
@@ -28,6 +29,7 @@ class AdminController extends Controller
 
         $users = DB::table('users')
         ->count();
+
 
         $a=array($getAllMatches, $getMatchThanCurrentDate[0]->count, $totalNumberTicketSold, $users);
         

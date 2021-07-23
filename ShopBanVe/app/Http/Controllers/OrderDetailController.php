@@ -9,10 +9,9 @@ use Illuminate\Http\Request;
 
 class OrderDetailController extends Controller
 {
+   
     public function index(){
         $order_details = DB::table('order_details')->get();
-
-
         return view('OrderDetail.index', compact('order_details')); 
     }
 

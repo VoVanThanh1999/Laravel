@@ -5,15 +5,17 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\TestMail;
 use DB;
 use App\Models\VMatch;
+use App\Models\Image;
 use App\Models\MatchDetail;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function homepage()
-    {
+    {   
+        $images = DB::table('images')->get();
         $v_matches = DB::select("SELECT * FROM `v_matches` WHERE date_start > CURRENT_TIME");
-        return view('UserHome.HomePage.index', compact('v_matches'));
+        return view('UserHome.HomePage.index', compact('v_matches', 'images'));
     }
 
     public function detailsPage($id)

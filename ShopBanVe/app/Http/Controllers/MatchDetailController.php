@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 
 class MatchDetailController extends Controller
 {
+   
+    
     public function index()
     {
         $match_details = DB::table('match_details')->orderBy('id','DESC')->get();

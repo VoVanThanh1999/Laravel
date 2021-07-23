@@ -22,163 +22,67 @@
 </head>
 
 <body class="login-page sidebar-collapse">
-    <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
-        id="sectionsNav">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
-                    Material Kit </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <i class="material-icons">apps</i> Components
-                        </a>
-                        <div class="dropdown-menu dropdown-with-icons">
-                            <a href="../index.html" class="dropdown-item">
-                                <i class="material-icons">layers</i> All Components
-                            </a>
-                            <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html"
-                                class="dropdown-item">
-                                <i class="material-icons">content_paste</i> Documentation
-                            </a>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                <div class="card card-login">
+                    <form class="form" method="POST" action="{{ route('login.check') }}">
+                        <div class="card-header card-header-primary text-center">
+                            <h4 class="card-title">Login</h4>
+                            <div class="social-line">
+                                <a href="#pablo" class="btn btn-just-icon btn-link">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                                <a href="#pablo" class="btn btn-just-icon btn-link">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#pablo" class="btn btn-just-icon btn-link">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </div>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.creative-tim.com/product/material-kit-pro"
-                            target="_blank">
-                            <i class="material-icons">unarchive</i> Upgrade to PRO
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-                            href="https://twitter.com/CreativeTim" target="_blank"
-                            data-original-title="Follow us on Twitter" rel="nofollow">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-                            href="https://www.facebook.com/CreativeTim" target="_blank"
-                            data-original-title="Like us on Facebook" rel="nofollow">
-                            <i class="fa fa-facebook-square"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-                            href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
-                            data-original-title="Follow us on Instagram" rel="nofollow">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="page-header header-filter"
-        style="background-image: url('{{ asset('img/bg7.jpg') }}'); background-size: cover; background-position: top center;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 ml-auto mr-auto">
-                    <div class="card card-login">
-                        <form class="form" method="POST" action="{{ route('login.check') }}">
-                            <div class="card-header card-header-primary text-center">
-                                <h4 class="card-title">Login</h4>
-                                <div class="social-line">
-                                    <a href="#pablo" class="btn btn-just-icon btn-link">
-                                        <i class="fa fa-facebook-square"></i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-link">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-link">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </div>
+                        <p class="description text-center">Or Be Classical</p>
+                        @if (Session::get('fail'))
+                            <div class="alert alert-danger">
+                                {{ Session::get('fail') }}
                             </div>
-                            <p class="description text-center">Or Be Classical</p>
-                            @if (Session::get('fail'))
-                                <div class="alert alert-danger">
-                                    {{ Session::get('fail') }}
-                                </div>
-                            @endif
+                        @endif
 
-                            @csrf
-                            <div class="card-body">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">mail</i>
-                                        </span>
-                                    </div>
-                                    <input type="email" id="inputEmail" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email...">
+                        @csrf
+                        <div class="card-body">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">mail</i>
+                                    </span>
                                 </div>
-                                <span class="text-danger">@error('email') {{ $message }} @enderror</span>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">lock_outline</i>
-                                        </span>
-                                    </div>
-                                    <input type="password" id="inputPassword" name="password" value="{{ old('password') }}" class="form-control" placeholder="Password...">
-                                </div>
-                                <span class="text-danger">@error('password') {{ $message }} @enderror</span>
+                                <input type="email" id="inputEmail" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email...">
                             </div>
-                            <br>   
-                            <br> 
-                            <button class="btn btn-primary btn-link btn-wd btn-lg btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign In</button> 
+                            <span class="text-danger">@error('email') {{ $message }} @enderror</span>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">lock_outline</i>
+                                    </span>
+                                </div>
+                                <input type="password" id="inputPassword" name="password" value="{{ old('password') }}" class="form-control" placeholder="Password...">
+                            </div>
+                            <span class="text-danger">@error('password') {{ $message }} @enderror</span>
+                        </div>
+                        <br>   
+                        <br> 
+                        <button class="btn btn-primary btn-link btn-wd btn-lg btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign In</button> 
 
-                            {{-- <div class="footer text-center">
-                                <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Get Started</a>
-                            </div> --}}
-                        </form>
-                    </div>
+                        {{-- <div class="footer text-center">
+                            <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Get Started</a>
+                        </div> --}}
+                    </form>
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container">
-                <nav class="float-left">
-                    <ul>
-                        <li>
-                            <a href="https://www.creative-tim.com/">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.creative-tim.com/presentation">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.creative-tim.com/blog">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright float-right">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>, made with <i class="material-icons">favorite</i> by
-                    <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
-                </div>
-            </div>
-        </footer>
     </div>
     <!--   Core JS Files   -->
     <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>

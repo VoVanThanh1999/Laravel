@@ -79,15 +79,15 @@ Route::post('admin/images/update', [ImageController::class, 'update'])->name('im
 Route::get('admin/images/delete/{id}', [ImageController::class, 'delete'])->name('image.delete');
 
 //Admin
-Route::get('admin', [AdminController::class, 'index']);
+Route::get('admin', [AdminController::class, 'dashboard'])->middleware('auth');
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('index.dashboard');
 Route::get('login', [AdminController::class, 'login'])->name('login');
 Route::post('login/check', [AdminController::class, 'loginCheck'])->name('login.check');
-Route::get('register', [AdminController::class, 'register'])->name('register');
-Route::post('register/create', [AdminController::class, 'registerCreate'])->name('register.create');
+// Route::get('register', [AdminController::class, 'register'])->name('register');
+// Route::post('register/create', [AdminController::class, 'registerCreate'])->name('register.create');
 
 // HomePage
-Route::get('/', [HomeController::class, 'homepage']);
+Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
  
 Route::get('/homepage/matchdetail/{id}', [HomeController::class, 'detailsPage'])->name('homepage.cart');
 Route::post('/homepage/orderticket', [HomeController::class, 'orderTicket'])->name('order.Ticket');

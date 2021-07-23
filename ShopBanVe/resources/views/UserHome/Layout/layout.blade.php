@@ -11,19 +11,26 @@
     <meta name="author" content="Maniruzzaman Akash">
 
     <!-- CSS links -->
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    {{-- <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" /> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <!-- Animate.css -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/animate.css') }}" />
     <!-- Owl Carousel CSS-->
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" />
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}" />
+    {{-- <link type="text/css" rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}" /> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <!-- Mega navigation bar -->
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/webslidemenu.css') }}" />
     <!-- Main css link -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/main.css') }}" />
     <link rel="icon" href="{{ asset('images/logo.png') }}" />
 </head>
+
 <body>
     <div class="wrapper">
         <!-- Header part  -->
@@ -34,7 +41,7 @@
                 @yield('content')
                 @yield('cart')
                 @yield('vieworder')
-                <div class="services-area">
+                {{-- <div class="services-area">
                     <div class="services">
                         <div class="container">
                             <div class="ftr-toprow">
@@ -78,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                </div> <!-- End Service -->
+                </div> <!-- End Service --> --}}
             </div> <!-- End content Area class -->
             @include('UserHome.Layout.footer')
             <div class="scroll">
@@ -93,5 +100,9 @@
             <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
             <script type="text/javascript" src="{{ asset('js/webslidemenu.js') }}"></script>
             <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+
 </body>
+
 </html>

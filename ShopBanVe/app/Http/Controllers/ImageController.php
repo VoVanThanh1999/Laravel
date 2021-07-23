@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
+  
     public function index()
     {
         $images = DB::table('images')->orderBy('id','DESC')->get();

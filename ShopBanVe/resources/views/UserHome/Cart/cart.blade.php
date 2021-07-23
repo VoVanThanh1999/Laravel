@@ -6,12 +6,9 @@
 @section('cart')
  
 <div class="cart_section">
-
     <div class="container-fluid">
-
         <div class="row">
-        
-            <div class="col-lg-10 offset-lg-1">
+            <div class="col-lg-10 offset-lg-1" >
             {!! $matchDetails[0]->information !!}
                 <div class="cart_container">
                     <div class="cart_title">Chi tiết trận đấu</div>
@@ -54,7 +51,7 @@
                 </div>
                
                 <div>
-                  <h4> Đặt ghế ngay </h4>
+                  <h2> Đặt ghế ngay </h2>
                 </div>
                 <form action="{{ route('order.Ticket') }}" method="POST">
                     @csrf
@@ -70,41 +67,38 @@
                     <input style="display: none;" value="{{$matchDetails[0]->A_number_of_seats_purchased}}" name="so_ghe_da_mua_b">
 
                     <div class="form-row">
-                      <div class="form-group col-md-6">
+                      <div class="form-group form1 col-md-6">
                         <label for="inputPassword4">Họ và tên</label>
-                        <input type="text"  class="form-control" id="full_name" name="full_name" placeholder="vd:Nguyễn Văn A">
+                        <input type="text"  class="form-control tolen" id="full_name" name="full_name" placeholder="vd:Nguyễn Văn A">
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group form1 col-md-6">
                         <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="email" name="email"   placeholder="Email">
+                        <input type="email" class="form-control tolen" id="email" name="email"   placeholder="Email">
                       </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form1">
                       <label for="inputAddress">Địa chỉ 1</label>
-                      <input type="text" class="form-control" id="address1" name="address1"   placeholder="1234 Main St">
+                      <input type="text" class="form-control tolen" id="address1" name="address1"   placeholder="1234 Main St">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form1">
                       <label for="inputAddress2">Địa chỉ 2</label>
-                      <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment, studio, or floor">
+                      <input type="text" class="form-control tolen" id="address2" name="address2" placeholder="Apartment, studio, or floor">
                     </div>
                     <div class="form-row">
-                      <div class="form-group col-md-6">
+                      <div class="form-group  form1 col-md-6">
                         <label for="inputCity">Số điện thoại</label>
-                        <input type="text" class="form-control" id="phone" name="phone">
+                        <input type="text" class="form-control tolen" id="phone" name="phone">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group form1 col-md-3">
                         <label for="inputZip">Số ghế khán đài A</label>
-                        <input type="number" min="0" class="form-control" max="5" id="numOfChairA" name="kh_numOfChairA">
+                        <input type="number" min="0" class="form-control tolen" max="5" id="numOfChairA" name="kh_numOfChairA">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group form1 col-md-3">
                         <label for="inputZip">Số ghế khán đài B</label>
-                        <input type="number" min="0" class="form-control"  max="5"  id="numOfChairB" name="kh_numOfChairB">
+                        <input type="number" min="0" class="form-control tolen"  max="5"  id="numOfChairB" name="kh_numOfChairB">
                       </div>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">Đặt vé</button>
-                    </br>
-                    </br> </br>
+                    <button type="submit" class="btn btn-primary tolen">Đặt vé</button>
                     @if (Session::get('fail'))
                                 <div class="alert alert-danger">
                                     {{ Session::get('fail') }}
@@ -118,7 +112,6 @@
                   </form>
             </div>
         </div>
-        
     </div>
 </div>
 

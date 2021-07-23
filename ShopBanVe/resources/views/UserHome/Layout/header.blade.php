@@ -1,7 +1,7 @@
- <!-- Start Top Header -->
+{{-- <!-- Start Top Header -->
  <div class="top-header">
     <div class="top-header-left pull-left">
-        <a href="products.html">IT17A1.11</a>
+        <a href="{{ route('homepage') }}">IT17A1.11</a>
     </div>
 
     <div class="clear"></div>
@@ -15,8 +15,8 @@
         </div>
 
         <div class="header-search pull-left" style="
-            margin-left: -89px;
-            margin-top: 10px;
+            margin-left: 230px;
+            margin-top: 25px;
         ">
             <form method="POST" action="{{ route('viewOrder.viewOrder') }}">
             @csrf
@@ -90,4 +90,27 @@
 
     </div>
 </div>
-<!-- End Header Main, logo, search bar,cart -->
+<!-- End Header Main, logo, search bar,cart --> --}}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand1" style="padding-left: 100px;  text-decoration: none;" href="{{ route('homepage') }}">Những
+        chú lính chì</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <form class="form-inline my-2 my-lg-0" style="padding-left: 627px" method="POST"
+            action="{{ route('viewOrder.viewOrder') }}">
+            @csrf
+            <input class="form-control control1 mr-sm-2" style="width: 250px" name="sdt" type="search"
+                placeholder="Tìm kiếm vé đã mua bằng SĐT" aria-label="Search">
+            <button class="btn btn1 btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+        </form>
+    </div>
+</nav>
