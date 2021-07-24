@@ -58,7 +58,7 @@
     </ol>
     <div class="carousel-inner" style="height:400px">
         @foreach ($images as $image)
-            @if ($image->id == 3)
+            @if ($image->id == 7)
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="{{ URL::to('/') }}/upload/images/{{ $image->image }}" alt="First slide">
                 </div>

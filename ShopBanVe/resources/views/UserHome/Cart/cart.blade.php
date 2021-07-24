@@ -15,7 +15,7 @@
                     <div class="cart_items">
                         <ul class="cart_list">
                             <li class="cart_item clearfix">
-                                <div class="cart_item_image"><img width="150px" height="150px" src="{{ URL::to('/') }}/upload/images/{{$matchDetails[0]->image}}" alt=""></div>
+                                <div class="cart_item_image"><img style="background-position: center; margin-top:20px;" src="{{ URL::to('/') }}/upload/images/{{$matchDetails[0]->image}}" alt=""></div>
                                 <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                                    
                                     <div class="cart_item_name cart_info_col">
