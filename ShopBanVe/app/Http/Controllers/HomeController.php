@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function homepage()
     {
         $images = DB::table('images')->get();
-        $v_matches = DB::select("SELECT * FROM `v_matches` WHERE date_start > CURRENT_TIME");
+        $v_matches = DB::select("SELECT * FROM `v_matches` WHERE date_start > CURRENT_TIME Order by date_start DESC");
         return view('UserHome.HomePage.index', compact('v_matches', 'images'));
     }
 
